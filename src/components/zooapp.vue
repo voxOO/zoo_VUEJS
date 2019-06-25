@@ -6,6 +6,7 @@
                 <td>{{ zivotinja.vrsta }}</td>
                 <td>{{ zivotinja.ime}}</td>
                 <td>{{ zivotinja.datum_rodjenja || "NEPOZNATO" }}</td>
+                <td><button @click="izbrisi_zivotinju(index)">Izbrisi</button></td>
             </tr>
         </table>
     </div>
@@ -26,7 +27,9 @@ export default {
     },
 
     methods : {
-
+        izbrisi_zivotinju (index) {
+            this.spisak_zivotinja.splice(index,1)
+        }
     }
 }
 </script>
