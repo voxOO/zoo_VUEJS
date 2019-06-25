@@ -3,7 +3,9 @@
         <h3>Lista Zivotinja</h3>
         <table>
             <tr v-for="(zivotinja, index) in spisak_zivotinja" :key="index" >
-                <td>{{ zivotinja.vrsta }}</td><td>{{ zivotinja.ime}}</td><td>{{ zivotinja.datum_rodjenja }}</td>
+                <td>{{ zivotinja.vrsta }}</td>
+                <td>{{ zivotinja.ime}}</td>
+                <td>{{ zivotinja.datum_rodjenja || "NEPOZNATO" }}</td>
             </tr>
         </table>
     </div>
@@ -17,7 +19,7 @@ export default {
                 {vrsta:'Zec' , ime:'Svetislav' , datum_rodjenja: '1.1.1990'},
                 {vrsta:'Konj' , ime:'Cvetko' , datum_rodjenja: '4.10.2000'},
                 {vrsta:'Koza' , ime:'Dragica' , datum_rodjenja: '5.5.2006'},
-                {vrsta:'Glista' , ime:'Miroslav' , datum_rodjenja: '4.6.2018'},
+                {vrsta:'Glista' , ime:'Miroslav' , datum_rodjenja: ''},
                 {vrsta:'Pcela' , ime:'Rajka' , datum_rodjenja: '8.1.1980'},
             ]
         }
