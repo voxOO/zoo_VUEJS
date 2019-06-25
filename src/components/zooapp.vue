@@ -38,6 +38,18 @@
                     </td>
             </tr>
         </table>
+        <hr>
+        <h3>Klase Zivotinja</h3>
+        <table>
+            <tr v-for="(klasa, index) in klase" :key="index">
+                <td>
+                    {{ klasa }}
+                </td>
+                <td>
+                    <button @click="prikaziListuZivotinja(klasa)">Vidi Listu Zivotinja</button>
+                </td>
+            </tr>
+        </table>
     </div>
 </template>
 
@@ -57,6 +69,9 @@ export default {
                 {klasa:'Sisar', vrsta:'Koza' , ime:'Dragica' , datum_rodjenja: '5.5.2006'},
                 {klasa:'Crvi', vrsta:'Glista' , ime:'Miroslav' , datum_rodjenja: ''},
                 {klasa:'Insekti',vrsta:'Pcela' , ime:'Rajka' , datum_rodjenja: '8.1.1980'},
+            ],
+            klase: [
+                'Sisar','Reptili','Ribe','Crvi','Insekti'
             ]
         }
     },
@@ -78,6 +93,12 @@ export default {
                 ime: '',
                 datum_rodjenja: ''
             }
+        },
+        prikaziListuZivotinja (klasa) {
+            
+            let imenaZivotinja = this.spisak_zivotinja.filter( zivotinja => zivotinja.klasa=== klasa)
+            .map(zivotinja=>zivotinja.ime)
+           alert(imenaZivotinja);
         }
     }
 }
